@@ -42,9 +42,7 @@
                 </div>
                 <nav>
                     <a href="{% url 'dashboard' %}" class="{% if request.path == '/' %}active{% endif %}">Dashboard</a>
-                    <a href="{% url 'student-list' %}" class="{% if '/students/' in request.path %}active{% endif %}">Members</a>
-                    <a href="{% url 'course-list' %}" class="{% if '/courses/' in request.path %}active{% endif %}">Books</a>
-                    <a href="{% url 'enrollment-list' %}" class="{% if '/enrollments/' in request.path %}active{% endif %}">Records</a>
+                    
                 </nav>
             </div>
             

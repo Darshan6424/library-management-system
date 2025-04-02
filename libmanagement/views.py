@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from .models import Members, Book,Records
 
-# Create your views here.
+def dashboard(request):
+    context = {
+        'total_members':  Members.objects.count(),
+        'total_books': Book.objects.count(),
+        'total_records': Records.objects.count(),
+        'recent_members': Members.objects.order_by('-membership_date')[:5],
+    }
+    return render(request, './dashboard.html', context)
+

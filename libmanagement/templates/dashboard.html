@@ -13,8 +13,8 @@
             <div class="card text-white bg-primary">
                 <div class="card-body">
                     <h5 class="card-title">Total Members</h5>
-                    <h2 class="card-text">{{ total_students }}</h2>
-                    <a href="{% url 'student-list' %}" class="text-white">View Memebers →</a>
+                    <h2 class="card-text">{{ total_members }}</h2>
+                    
                 </div>
             </div>
         </div>
@@ -23,8 +23,8 @@
             <div class="card text-white bg-success">
                 <div class="card-body">
                     <h5 class="card-title">Total Books</h5>
-                    <h2 class="card-text">{{ total_courses }}</h2>
-                    <a href="{% url 'course-list' %}" class="text-white">View Books →</a>
+                    <h2 class="card-text">{{ total_books }}</h2>
+                    
                 </div>
             </div>
         </div>
@@ -33,8 +33,8 @@
             <div class="card text-white bg-info">
                 <div class="card-body">
                     <h5 class="card-title">Total Books lent</h5>
-                    <h2 class="card-text">{{ total_enrollments }}</h2>
-                    <a href="{% url 'enrollment-list' %}" class="text-white">View Books lent →</a>
+                    <h2 class="card-text">{{ total_records }}</h2>
+                    
                 </div>
             </div>
         </div>
@@ -48,12 +48,11 @@
                     <h5 class="mb-0">Recently Added Members</h5>
                 </div>
                 <div class="card-body">
-                    {% if recent_students %}
+                    {% if recent_members %}
                         <ul class="list-group">
-                            {% for student in recent_students %}
+                            {% for member in recent_members %}
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    {{ student.first_name }} {{ student.last_name }}
-                                    <span class="badge bg-primary">{{ student.student_id }}</span>
+                                    {{member.name}}
                                 </li>
                             {% endfor %}
                         </ul>

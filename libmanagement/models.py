@@ -1,6 +1,6 @@
 from django.db import models
 
-class Student(models.Model):
+class Members(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
     membership_date = models.DateField(auto_now_add=True)
@@ -33,8 +33,8 @@ class Book(models.Model):
     def __str__(self):
         return self.title 
 
-class BookLend(models.Model):  
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+class Records(models.Model):  
+    student = models.ForeignKey(Members, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     lend_date = models.DateField(auto_now_add=True)
     return_date = models.DateField(null=True, blank=True)
