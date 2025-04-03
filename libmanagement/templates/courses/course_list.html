@@ -1,13 +1,15 @@
 <!-- templates/courses/course_list.html -->
 {% extends 'base.html' %}
 
-{% block title %}Courses - Library Management System{% endblock %}
+{% block title %}Books - Library Management System{% endblock %}
 
 {% block content %}
 <div class="container">
+    <h1>Books</h1><br>
     <div class="card">
         <div class="card-body">
             <table class="table table-striped">
+                
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -19,8 +21,20 @@
                 <tbody>
                     {% for book in books %}
                     <tr>
-                        <td>{{ book.book_code }}</td>
-                        <td>{{ book.name }}</td>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
                         <td>{{ book.author }}</td>
-                        <td>{( book.genre ) }</td>
+                        <td>{{ book.genre }}</td>
                     </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">No Members found.</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+{% endblock %}
+                

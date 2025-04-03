@@ -42,7 +42,8 @@
                 </div>
                 <nav>
                     <a href="{% url 'dashboard' %}" class="{% if request.path == '/' %}active{% endif %}">Dashboard</a>
-                    
+                    <a href="{% url 'member_list' %}" >Members</a>
+                    <a href="{%url 'books' %}">Books</a>
                 </nav>
             </div>
             
